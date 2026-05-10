@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 // Backend URL
-const API_URL = "https://quick-share-app-backend-theta.vercel.app/";
+const API_URL = "https://quick-share-app-backend-theta.vercel.app";
 
 function App() {
   const [text, setText] = useState("");
@@ -29,9 +29,7 @@ function App() {
     setLoading(true);
 
     try {
-      await axios.post(`${API_URL}/save`, {
-        text,
-      });
+      await axios.post(`${API_URL}/save`, { text });
 
       setMessage("✅ Saved Successfully");
 
@@ -39,8 +37,9 @@ function App() {
         setMessage("");
       }, 3000);
     } catch (err) {
-      setMessage("❌ Error Saving Data");
-    }
+  console.log("SAVE ERROR:", err.response?.data || err.message);
+  setMessage("❌ Error Saving Data");
+}
 
     setLoading(false);
   };
