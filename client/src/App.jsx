@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 // Backend URL
-const API_URL = "https://quick-share-app-backend-qradsin5n-warisha-turabs-projects.vercel.app/";
+const API_URL = "https://quick-share-app-backend-theta.vercel.app/";
 
 function App() {
   const [text, setText] = useState("");
